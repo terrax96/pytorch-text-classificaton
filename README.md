@@ -1,5 +1,6 @@
 # pytorch-text-classificaton
 
+Text classification of the AG News dataset. Reference tutorial can be found [here](https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html).
 
 ## Setup
 
