@@ -10,3 +10,7 @@
 ## Run
 
 `python src/main.py`
+
+## Inspect trained models
+
+`tensorboard --logdir lightning_logs`
