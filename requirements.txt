@@ -1,0 +1,4 @@
+-i https://download.pytorch.org/whl/cu121
+torch==2.2.1+cu121
+torchtext==0.17.1
+portalocker==2.8.2
