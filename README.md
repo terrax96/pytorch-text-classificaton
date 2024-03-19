@@ -10,7 +10,8 @@ Text classification of the AG News dataset. Reference tutorial can be found [her
 
 ## Run
 
-`python src/main.py`
+- start training: `python src/main.py`
+- run prediction example: `python src/predict.py`
 
 ## Inspect trained models
 
