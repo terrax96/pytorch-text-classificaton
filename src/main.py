@@ -11,6 +11,4 @@ if __name__ == "__main__":
     checkpoint_callback = ModelCheckpoint(monitor="accuracy", mode="max")
     trainer = Trainer(max_epochs=10, callbacks=[checkpoint_callback], accelerator="gpu", gradient_clip_algorithm="norm", gradient_clip_val=0.1)
     trainer.fit(model=model, datamodule=ag_news_datamodule)
-
-    # model = TextClassificationModel.load_from_checkpoint("lightning_logs/version_2/checkpoints/epoch=2-step=5346.ckpt")
-    trainer.test(model=model, datamodule=ag_news_datamodule)
+    trainer.test(model=model, datamodule=ag_news_datamodule, ckpt_path=checkpoint_callback.best_model_path)
