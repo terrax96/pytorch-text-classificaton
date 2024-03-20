@@ -1,0 +1,4 @@
+batch_size: 64
+embed_dim: 64
+lr: 5
+with_scheduler: False
