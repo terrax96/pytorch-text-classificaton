@@ -7,6 +7,7 @@ from torchmetrics import Accuracy
 class BaseTextClassificationModel(nn.Module):
     def __init__(self, vocab_size: int, embed_dim: int, num_class: int):
         super(BaseTextClassificationModel, self).__init__()
+        # this EmbeddingBag layer defines the text embedding as the mean of the embedding of each word in the input text
         self.embedding = nn.EmbeddingBag(vocab_size, embed_dim, sparse=False)
         self.fc = nn.Linear(embed_dim, num_class)
         self.init_weights()
