@@ -1,4 +1,5 @@
 import lightning as L
+import torch
 from torch import nn
 from torch import optim
 from torchmetrics import Accuracy
@@ -60,5 +61,11 @@ class TextClassificationModel(L.LightningModule):
             }
         else:
             return optimizer
+        
+    def predict(self, text, text_pipeline):
+        with torch.no_grad():
+            text = torch.tensor(text_pipeline(text))
+            output = self.model(text, torch.tensor([0]))
+            return output.argmax(1).item() + 1
         
 
